@@ -11,7 +11,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/serif.css">
+		<link rel="stylesheet" href="css/theme/blood.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -33,9 +33,51 @@
 					<p> Yuting Li (Irene) </p>
 					<p> Soft matter group, DAMTP </p>
 				</section>
-				<section>
 
+				<section>
+					<video width=500 autoplay loop src="videos/starlings_forwards_short.mp4"></video>
+					<video width=500 autoplay loop src="videos/starlings_backwards_short.mp4"></video>
 				</section>
+
+				<section>
+					<!-- Add more pictures here -->
+					<h4> What is active matter </h4>
+					<ol>
+						<li> Bacteria </li>
+						<li> Cells in tissue </li>
+						<li> Artificial colloids </li>
+						<li> Fish schools, bird flocks </li>
+					</ol>
+				</section>
+				<section>
+					<!-- Split into several slides with videos and pictures and references  -->
+					<h4> Examples of non-equilibrium characteristics </h4>
+					<ol>
+						<li> Bacteria in a circular confinement (Ray's group) </li>
+						<li> Bacteria turbulance -> topological defects in active nematics </li>
+						<li> Swarming behaviour in flocking </li>
+						<li> long-range order in 2D (violating the equilibrium Wigner-Mermin theorem) </li>
+					</ol>
+				</section>
+				<section>
+					<h4> Minimal model for self-propelled bacteria with quorum sensing </h4>
+					<p align="left"> Two approches </p>
+					<ol>
+						<li> Explicit coarse-graining from microscopic dynamics </li>
+						<li> Making an intelligent guess </li>
+					</ol>
+				</section>
+
+				<section>
+					<h4> The explicit coarse-graining approach </h4>
+					<img height=120 src="images/RTPABP.jpeg"></img>
+					\begin{align}
+					\partial_t \mathbf{r} & = v(\mathbf{r}) \hat{\mathbf{n}}(\theta)\\
+					\partial_t \theta & = D_\mathrm{rot} \Lambda
+					\end{align}
+				</section>
+
+
 			</div>
 		</div>
 
@@ -43,15 +85,26 @@
 		<script src="js/reveal.js"></script>
 
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
+
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				overview: true,
+				loop: false,
+				center: true,
+
+				fragments: true,
+				keyboard: true,
+				transition: 'slide',
+
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/math/math.js', async: true }
 				]
 			});
 		</script>
