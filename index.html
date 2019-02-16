@@ -40,33 +40,55 @@
 				</section>
 
 				<section>
-					<!-- Add more pictures here -->
-					<h4> What is active matter </h4>
-					<ol>
-						<li> Bacteria </li>
-						<li> Cells in tissue </li>
-						<li> Artificial colloids </li>
-						<li> Fish schools, bird flocks </li>
-					</ol>
-				</section>
-				<section>
-					<!-- Split into several slides with videos and pictures and references  -->
-					<h4> Examples of non-equilibrium characteristics </h4>
-					<ol>
-						<li> Bacteria in a circular confinement (Ray's group) </li>
-						<li> Bacteria turbulance -> topological defects in active nematics </li>
-						<li> Swarming behaviour in flocking </li>
-						<li> long-range order in 2D (violating the equilibrium Wigner-Mermin theorem) </li>
-					</ol>
-				</section>
+					<section>
+						<!-- Add more pictures here -->
+						<h4> What is active matter? </h4>
+						<p align="left"> Locally injecting energy into the system </p>
+						<ol>
+							<li> Cells in tissue, actin filaments </li>
+							<li> Bacteria suspensions, microtubule bundles </li>
+							<li> Artificial self propelled particles: Janus particles, shaken rods, walking disks </li>
+							<li> Fish schools, bird flocks, animal migration</li>
+						</ol>
+					</section>
+					<section>
+						<h4> Equilibrium is a very special case </h4>
+						<p align="left"> Constraints of equilibrium </p>
+						<ol>
+							<li> Time reversal symmetry </li>
+							<li> Principle of detailed balance </li>
+							<li> Boltzmann distribution when connected to a heat bath </li>
+						</ol>
+					</section>
+					<section>
+						<!-- Split into several slides with videos and pictures and references  -->
+						<h4> Examples of non-equilibrium characteristics </h4>
+						<ol>
+							<li> Bacteria in a circular confinement (Ray's group) </li>
+							<li> Microtubule turbulance  -> topological defects in active nematics
+								(experiments by Brandeis group and simulations from Oxford)
+								</li>
+						</ol>
+					</section>
+					<section>
+						<h4> Examples of non-equilibrium characteristics </h4>
+						<ol>
+							<li> Swarming behaviour in flocking (Simulations of the Toner-Tu model)</li>
+							<li> long-range order in 2D (violating the equilibrium Wigner-Mermin theorem) </li>
+						</ol>
+					</section>
+			</section>
+			<section>
 				<section>
 					<h4> Minimal model for self-propelled bacteria with quorum sensing </h4>
 					<p align="left"> Two approches </p>
 					<ol>
-						<li> Explicit coarse-graining from microscopic dynamics </li>
-						<li> Making an intelligent guess </li>
+						<li> Explicitly coarse-grain from microscopic rules </li>
+						<li> Make an intelligent guess </li>
 					</ol>
 				</section>
+
+
 
 				<section>
 					<h4> The explicit coarse-graining approach </h4>
@@ -76,6 +98,21 @@
 					\partial_t \theta & = D_\mathrm{rot} \Lambda
 					\end{align}
 				</section>
+
+				<section>
+					<h4> The intelligent guess approach </h4>
+					<p align="left"> Expand $\rho = \rho_\mathrm{ref} ( 1 + \phi) $ </p>
+					<p align="left"> All the terms allowed by symmetry and conservation laws
+						(inc. terms that break detailed balance) </p>
+					\begin{equation}
+					\begin{split}
+					\partial_t \phi & = - \grad \cdot \mathbf{J} \\
+					\mathbf{J} & = - M \grad \mu + \zeta (\grad^2 \phi) \grad \phi + \sqrt{2M} \mathbf{\Lambda} \\
+					\mu & = \alpha \phi + \beta \phi^3 - (\kappa+ \kappa_1 \phi) \grad^2 \phi + \lambda (\grad \phi )^2
+					\end{split}
+					\end{equation}
+				</section>
+			</section>
 
 
 			</div>
