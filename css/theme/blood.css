@@ -85,7 +85,6 @@ body {
 .reveal iframe {
   max-width: 95%;
   max-height: 95%; }
-
 .reveal strong,
 .reveal b {
   font-weight: bold; }
@@ -172,12 +171,11 @@ body {
 
 .reveal table th {
   font-weight: bold; }
-
 .reveal table th,
 .reveal table td {
   text-align: left;
   padding: 0.2em 0.5em 0.2em 0.5em;
-  border-bottom: 1px solid; }
+  border-bottom: 0px solid; }
 
 .reveal table th[align="center"],
 .reveal table td[align="center"] {

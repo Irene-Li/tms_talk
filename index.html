@@ -35,82 +35,99 @@
 				</section>
 
 				<section>
-					<video width=500 autoplay loop src="videos/starlings_forwards_short.mp4"></video>
-					<video width=500 autoplay loop src="videos/starlings_backwards_short.mp4"></video>
+					<video muted width=500 autoplay controls loop src="videos/starlings_forwards_short.mp4"></video>
+					<video muted width=500 autoplay controls loop src="videos/starlings_backwards_short.mp4"></video>
 				</section>
 
 				<section>
 					<section>
 						<!-- Add more pictures here -->
 						<h4> What is active matter? </h4>
-						<p align="left"> Locally injecting energy into the system </p>
 						<ol>
-							<li> Cells in tissue, actin filaments </li>
-							<li> Bacteria suspensions, microtubule bundles </li>
-							<li> Artificial self propelled particles: Janus particles, shaken rods, walking disks </li>
-							<li> Fish schools, bird flocks, animal migration</li>
+						<li> Processes that locally injects energy into the environment </li>
+						<li> Non-equilibrium; no time reversal symmetry; no Boltzmann distribution etc </li>
 						</ol>
 					</section>
 					<section>
-						<h4> Equilibrium is a very special case </h4>
-						<p align="left"> Constraints of equilibrium </p>
-						<ol>
-							<li> Time reversal symmetry </li>
-							<li> Principle of detailed balance </li>
-							<li> Boltzmann distribution when connected to a heat bath </li>
-						</ol>
+						<h4> Examples of active matter </h4>
+						<table>
+							<tr>
+								<td> Myosin walking on actin
+									<small> (Prost et al, Nat phys, 2015) </small>
+								</td>
+								<td>
+									Microtubule bundles and kinesin </br>
+									<small> (Giomi PRX 2015) </small>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img height=350 src="images/active_gel.jpg"></img>
+								</td>
+								<td>
+									<img height=300 src="images/microtubule_active_turbulence.png"></img>
+								</td>
+							</tr>
+						</table>
 					</section>
 					<section>
-						<!-- Split into several slides with videos and pictures and references  -->
-						<h4> Examples of non-equilibrium characteristics </h4>
-						<ol>
-							<li> Bacteria in a circular confinement (Ray's group) </li>
-							<li> Microtubule turbulance  -> topological defects in active nematics
-								(experiments by Brandeis group and simulations from Oxford)
-								</li>
-						</ol>
+						<h4> Examples of active matter </h4>
+						<table>
+							<tr>
+								<td>
+									Bacterial ratchet motors </br>
+									<small> (Di Leonardo et all PNAS 2010) </small>
+								</td>
+								<td>
+									Self-propelling discs</br>
+									<small> (Briand, Schindler, Dauchot PRL 2018) </small>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<video muted autoplay controls height=350 src="videos/ratchet.m4v"></video>
+								</td>
+								<td>
+									<video muted autoplay controls height=350 src="videos/shakengrains.m4v"></video>
+								</td>
+							</tr>
+						</table>
 					</section>
 					<section>
-						<h4> Examples of non-equilibrium characteristics </h4>
-						<ol>
-							<li> Swarming behaviour in flocking (Simulations of the Toner-Tu model)</li>
-							<li> long-range order in 2D (violating the equilibrium Wigner-Mermin theorem) </li>
-						</ol>
+						<h4> Examples of active matter </h4>
+						<p> Self-propelled hard colloids without alignment </p>
+						<div>
+						<video muted autoplay controls height=400 src="videos/active_colloids.m4v"></video>
+						</div>
+						<small> (Redner PRL 2013) </small>
 					</section>
 			</section>
 			<section>
 				<section>
 					<h4> Minimal model for self-propelled bacteria with quorum sensing </h4>
-					<p align="left"> Two approches </p>
-					<ol>
-						<li> Explicitly coarse-grain from microscopic rules </li>
-						<li> Make an intelligent guess </li>
-					</ol>
-				</section>
-
-
-
-				<section>
-					<h4> The explicit coarse-graining approach </h4>
-					<img height=120 src="images/RTPABP.jpeg"></img>
-					\begin{align}
-					\partial_t \mathbf{r} & = v(\mathbf{r}) \hat{\mathbf{n}}(\theta)\\
-					\partial_t \theta & = D_\mathrm{rot} \Lambda
-					\end{align}
+					<img height=260 src="images/RTPABP.jpeg"></img>
+					<div class="fragment">
+						<p align="left"> Two approches </p>
+						<ol>
+							<li> Explicitly coarse-grain from microscopic rules </li>
+							<li> <span class="fragment highlight-red"> Make an intelligent guess </span> </li>
+						</ol>
+					</div>
 				</section>
 
 				<section>
 					<h4> The intelligent guess approach </h4>
 					<p align="left"> Expand $\rho = \rho_\mathrm{ref} ( 1 + \phi) $ </p>
-					<p align="left"> All the terms allowed by symmetry and conservation laws
-						(inc. terms that break detailed balance) </p>
-					\begin{equation}
-					\begin{split}
-					\partial_t \phi & = - \grad \cdot \mathbf{J} \\
-					\mathbf{J} & = - M \grad \mu + \zeta (\grad^2 \phi) \grad \phi + \sqrt{2M} \mathbf{\Lambda} \\
-					\mu & = \alpha \phi + \beta \phi^3 - (\kappa+ \kappa_1 \phi) \grad^2 \phi + \lambda (\grad \phi )^2
-					\end{split}
-					\end{equation}
+					<p align="left"> Require rotational symmetry, translational symmetry, conservation of $\phi$ </p>
+					<div class="fragment">
+						\begin{equation}
+						\begin{split}
+						\partial_t \phi & = - \nabla \cdot \mathbf{J} \\
+						\mathbf{J} & = - M \nabla \mu + \fbox{$\zeta (\nabla^2 \phi) \nabla \phi$}  + \sqrt{2M} \mathbf{\Lambda} \\
+						\mu & = \alpha \phi + \beta \phi^3 - (\kappa+ \kappa_1 \phi) \nabla^2 \phi + \fbox{$\lambda (\nabla \phi )^2$}
+						\end{split}
+						\end{equation}
+					</div>
 				</section>
 			</section>
 
