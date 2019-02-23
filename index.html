@@ -49,7 +49,7 @@
 						</ol>
 					</section>
 					<section>
-						<h4> Examples of active matter </h4>
+						<h4> Why should I care? </h4>
 						<table>
 							<tr>
 								<td> Myosin walking on actin
@@ -71,7 +71,7 @@
 						</table>
 					</section>
 					<section>
-						<h4> Examples of active matter </h4>
+						<h4> Why should I care? </h4>
 						<table>
 							<tr>
 								<td>
@@ -85,16 +85,16 @@
 							</tr>
 							<tr>
 								<td>
-									<video muted autoplay controls height=350 src="videos/ratchet.m4v"></video>
+									<video muted autoplay controls loop height=350 src="videos/ratchet.m4v"></video>
 								</td>
 								<td>
-									<video muted autoplay controls height=350 src="videos/shakengrains.m4v"></video>
+									<video muted autoplay controls loop height=350 src="videos/shakengrains.m4v"></video>
 								</td>
 							</tr>
 						</table>
 					</section>
 					<section>
-						<h4> Examples of active matter </h4>
+						<h4> Why should I care? </h4>
 						<p> Self-propelled hard colloids without alignment </p>
 						<div>
 						<video muted autoplay controls height=400 src="videos/active_colloids.m4v"></video>
@@ -116,22 +116,106 @@
 				</section>
 
 				<section>
-					<h4> The intelligent guess approach </h4>
-					<p align="left"> Expand $\rho = \rho_\mathrm{ref} ( 1 + \phi) $ </p>
+					<h5> The intelligent guess approach </h5>
+					<small>
+					<p align="left"> Expand $\rho(x, t) = \rho_\mathrm{ref} ( 1 + \phi(x, t)) $ </p>
 					<p align="left"> Require rotational symmetry, translational symmetry, conservation of $\phi$ </p>
 					<div class="fragment">
-						\begin{equation}
-						\begin{split}
-						\partial_t \phi & = - \nabla \cdot \mathbf{J} \\
-						\mathbf{J} & = - M \nabla \mu + \fbox{$\zeta (\nabla^2 \phi) \nabla \phi$}  + \sqrt{2M} \mathbf{\Lambda} \\
-						\mu & = \alpha \phi + \beta \phi^3 - (\kappa+ \kappa_1 \phi) \nabla^2 \phi + \fbox{$\lambda (\nabla \phi )^2$}
-						\end{split}
-						\end{equation}
+							\begin{equation}
+							\begin{split}
+							\partial_t \phi & = - \nabla \cdot \mathbf{J} \\
+							\mathbf{J} & = - \nabla \mu + \fbox{$\zeta (\nabla^2 \phi) \nabla \phi$}  + \sqrt{2D} \mathbf{\Lambda} \\
+							\mu & = \alpha \phi + \beta \phi^3 - (\kappa+ \kappa_1 \phi) \nabla^2 \phi + \fbox{$\lambda (\nabla \phi )^2$}
+							\end{split}
+							\end{equation}
 					</div>
+					</small>
 				</section>
 			</section>
+			<section>
+				<section>
+					<h5> What about time reversal symmetry? </h5>
+					<small>
+						<ul>
+							<li class="fragment">
+								<p align="left"> Consider the trajectory $\phi(t)_{t \in [0, T]}$ </p>
+								\begin{equation}
+								\mathbb{P}[\phi(t)_{t \in [0, T]}] = \mathbb{P} [ \phi(t)_{t \in [0, T]} | \phi(0)] P(\phi(0))
+								\end{equation}
+							</li>
+							<li class="fragment">
+								<p align="left"> Consider the reversed trajectory $\phi^\mathrm{R}(t) \equiv \phi(T-t)$ </p>
+								\begin{equation}
+								\mathbb{P}[\phi^R(t)_{t \in [0, T]}] = \mathbb{P} [ \phi^R(t)_{t \in [0, T]} | \phi(T)] P(\phi(T))
+								\end{equation}
+							</li>
+							<li class="fragment">
+								<p align="left"> $\mathbb{P}[\phi^R(t)_{t \in [0, T]}] = \mathbb{P}[\phi(t)_{t \in [0, T]}]$ iff </p>
+								\begin{equation}
+									R[\phi(t)] \equiv \frac{\mathbb{P} [ \phi(t)_{t \in [0, T]} | \phi(0)]}{\mathbb{P} [ \phi^R(t)_{t \in [0, T]} | \phi(T)]} = \frac{P(\phi(T))}{P(\phi(0))}
+								\end{equation}
+							</li>
+						</ul>
+					</small>
+				</section>
 
-
+				<section>
+					<small>
+						<p align="left"> In our model $\partial_t \phi = - \nabla \cdot \mathbf{J}_\mathrm{d} - \sqrt{2D} \nabla \cdot \Lambda$
+						</p>
+						<div class="fragment">
+							<p align="left"> Probability of a trajectory $\phi(t)_{t \in [0, T]}$, </p>
+							\begin{equation}
+							\mathbb{P} [ \phi(t)_{[0, T]} | \phi(0)] \propto \exp \left [   - \int \mathrm{d}x \mathrm{d}t
+							\frac{1}{4D} \left |  \nabla^{-1} (\partial_t \phi + \nabla \cdot \mathbf{J}_\mathrm{d})\right |^2 \right ]
+							\end{equation}
+						</div>
+						<div class="fragment">
+							<p align="left"> Time reversal $\partial_t \phi^R = - \partial_t \phi$, </p>
+							\begin{equation}
+ 							R[\phi(t)] = \exp \left [ - \int \mathrm{d}x\mathrm{d}t \frac{1}{D} \partial_t \phi \left ( \mu + \zeta (\dots) \right )\right ]
+							\end{equation}
+						</div>
+						<div class="fragment">
+							<p align="left"> In general, $R(\phi)$ not a function of the endpoints, but if $\zeta = \lambda = 0$, </p>
+							\begin{equation}
+								\mu(x, t)= \frac{\delta F[\phi(t)]}{\delta \phi(x, t)} \rightarrow R[\phi]
+								= \exp \left [ - \frac{1}{D} (F[\phi(T)] - F[\phi(0)]) \right ]
+							\end{equation}
+						</div>
+					</small>
+				</section>
+				<section>
+					<h5> Consequences of the TRS-breaking terms </h5>
+					<video autoplay loop controls width=300 src="videos/SM2.mov"></video>
+					<video autoplay loop controls width=300 src="videos/SM3.mov"></video>
+					<video autoplay loop controls width=300 src="videos/SM4.mov"></video>
+					<small>  (Tjhung, Nardini, Cates, PRX 2018) </small>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h5> What if we break mass conservation? </h5>
+					<ul>
+						<li> Population dynamics of bacteria </li>
+						<li> Birth via cell splitting + competition for resources $\partial_t \rho = - u \rho ( \rho - \rho_\mathrm{t} )$ </li>
+						<li> In terms of our expansion parameter $\phi$, $\partial_t \phi =  \nabla^2 \mu_\mathrm{eq}- u (\phi + \rho_\mathrm{ref})(\phi - \phi_\mathrm{t})$ </li>
+					</ul>
+				</section>
+				<section>
+					<h5> The limit cycle phase </h5>
+					<img height=500 src="images/evolution.png"></img>
+				</section>
+				<section>
+					<h5> The arrested steady state phase </h5>
+					<img align="left" height=300 src="images/cluster.png"> </img>
+					<img align="right" height=300 src="images/anticoarsening.png" </img>
+				</section>
+			</section>
+			<section>
+				<h4> Thank you!  </h4>
+				<p align="right"> This presentation: https://irene-li.github.io/tms_talk </p>
+			</section>
 			</div>
 		</div>
 
